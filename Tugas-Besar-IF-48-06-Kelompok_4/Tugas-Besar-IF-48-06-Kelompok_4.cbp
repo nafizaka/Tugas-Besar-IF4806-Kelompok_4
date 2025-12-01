@@ -32,6 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Divisi.h" />
+		<Unit filename="Divisi_103012430046.cpp" />
+		<Unit filename="Pegawai.h" />
+		<Unit filename="Pegawai_103012400148.cpp" />
+		<Unit filename="Pegawai_103012430046.cpp" />
+		<Unit filename="divisi_103012400148.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

@@ -1,4 +1,4 @@
-#include <iostream
+#include <iostream>
 #include "Pegawai.h"
 #include "Divisi.h"
 

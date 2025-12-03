@@ -2,7 +2,7 @@
 #define PEGAWAI_H_INCLUDED
 #include <iostream>
 using namespace std;
-typedef struct elemenpegawai *adrPegawai;
+typedef struct elemenPegawai *adrPegawai;
 
 struct Pegawai {
     string nama;
@@ -15,18 +15,15 @@ struct elemenPegawai {
     Pegawai info;
     adrPegawai next;
 };
-struct ListPegawai {
-    adrPegawai first;
-};
-void createListPegawai(ListPegawai &L);
-bool isEmptyPegawai(ListPegawai L);
-adrPegawai createElemenPegawai(Pegawai x);
-void insertFirstPegawai(ListPegawai &L, adrPegawai P);
-void insertLastPegawai(ListPegawai &L, adrPegawai P);
-void insertAfterPegawai(ListPegawai &L, adrPegawai Prec, adrPegawai P);
-void deleteFirstPegawai(ListPegawai &L, adrPegawai &P);
-void deleteLastPegawai(ListPegawai &L, adrPegawai &P);
-void deleteAfterPegawai(ListPegawai &L, adrPegawai Prec, adrPegawai &P);
-adrPegawai searchPegawai(ListPegawai L, string nama);
-void printPegawai(ListPegawai L);
+
+adrPegawai createElemenPegawai_103012400148(string nama, id, jabatan, int gaji, bool status);
+bool isEmpty_103012400148(adrDivisi p);
+void insertFirstPegawai_103012400148(adrDivisi &p, adrPegawai q);
+void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q);
+void insertAfterPegawai_103012400148(adrDivisi &p, adrPegawai prec, adrPegawai q);
+void deleteFirstPegawai(adrDivisi &p, adrPegawai &q);
+void deleteLastPegawai(adrDivisi &p, adrPegawai &q);
+void deleteAfterPegawai(adrDivisi &p, adrPegawai prec, adrPegawai &q);
+adrPegawai searchPegawai(adrDivisi p, string id);
+void printPegawai(adrDivisi p);
 #endif // PEGAWAI_H_INCLUDED

@@ -12,7 +12,7 @@ struct Divisi {
     string lokasiDiv;
 };
 
-struct elemenDivisi {
+struct elmDivisi {
     Divisi info;
     adrDivisi next;
     adrDivisi prev;
@@ -28,10 +28,10 @@ bool isEmptyDivisi(listDivisi L);
 adrDivisi createElemenDivisi(Divisi x);
 void insertFirstDivisi(listDivisi &L, adrDivisi p);
 void insertLastDivisi(listDivisi &L, adrDivisi p);
-void insertAfterDivisi(listDivisi &L, adrDivisi prec, adrDivisi P);
+void insertAfterDivisi(listDivisi &L, adrDivisi prec, adrDivisi p);
 void deleteFirstDivisi(listDivisi &L, adrDivisi &p);
 void deleteLastDivisi(listDivisi &L, adrDivisi &p);
-void deleteAfterDivisi(listDivisi &L, adrDivisi Prec, adrDivisi &P);
+void deleteAfterDivisi(listDivisi &L, adrDivisi Prec, adrDivisi &p);
 adrDivisi searchDivisi(listDivisi L, string nama);
 void printDivisi(listDivisi L);
 

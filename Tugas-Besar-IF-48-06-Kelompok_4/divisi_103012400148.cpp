@@ -4,8 +4,10 @@
 
 using namespace std;
 
-void deleteFirstDivisi(listDivisi &L, adrDivisi &p)
-void deleteLastDivisi(listDivisi &L, adrDivisi &p)
-void deleteAfterDivisi(listDivisi &L, adrDivisi Prec, adrDivisi &P)
-adrDivisi searchDivisi(listDivisi L, string nama)
-void printDivisi(listDivisi L)
+void deleteFirstDivisi_103012400148(listDivisi &L, adrDivisi &p){
+
+}
+void deleteLastDivisi_103012400148(listDivisi &L, adrDivisi &p)
+void deleteAfterDivisi_103012400148(listDivisi &L, adrDivisi Prec, adrDivisi &p)
+adrDivisi searchDivisi_103012400148(listDivisi L, string nama)
+void printDivisi_103012400148(listDivisi L)

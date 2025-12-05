@@ -4,15 +4,14 @@
 
 using namespace std;
 
-adrPegawai createElemenPegawai_103012400148(string nama, id, jabatan, int gaji, bool status){
+adrPegawai createElemenPegawai_103012400148(pegawai x){
     adrPegawai p;
     p = new elemenPegawai;
-    p->info.nama = nama;
-    p->info.id = id
-    p->info.jabatan = jabatan;
-    p->info.gaji = gaji;
-    p->info.status = status;
-    p->firstPegawai = nullptr;
+    p->info.nama = x.nama;
+    p->info.id = x.id
+    p->info.jabatan = x.jabatan;
+    p->info.gaji = x.gaji;
+    p->info.status = x.status;
     p->next = nullptr;
     return p;
 }

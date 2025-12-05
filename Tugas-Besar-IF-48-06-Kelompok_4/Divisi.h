@@ -24,16 +24,16 @@ struct listDivisi {
     adrDivisi last;
 };
 
-void createListDivisi(listDivisi &L);
-bool isEmptyDivisi(listDivisi L);
-adrDivisi createElemenDivisi(Divisi x);
-void insertFirstDivisi(listDivisi &L, adrDivisi p);
-void insertLastDivisi(listDivisi &L, adrDivisi p);
-void insertAfterDivisi(listDivisi &L, adrDivisi prec, adrDivisi p);
-void deleteFirstDivisi(listDivisi &L, adrDivisi &p);
-void deleteLastDivisi(listDivisi &L, adrDivisi &p);
-void deleteAfterDivisi(listDivisi &L, adrDivisi Prec, adrDivisi &p);
-adrDivisi searchDivisi(listDivisi L, string nama);
-void printDivisi(listDivisi L);
+void createListDivisi_103012430046(listDivisi &L);
+bool isEmptyDivisi_103012430046(listDivisi L);
+adrDivisi createElemenDivisi_103012430046(Divisi x);
+void insertFirstDivisi_103012430046(listDivisi &L, adrDivisi p);
+void insertLastDivisi_103012430046(listDivisi &L, adrDivisi p);
+void insertAfterDivisi_103012430046(listDivisi &L, adrDivisi prec, adrDivisi p);
+void deleteFirstDivisi_103012400148(listDivisi &L, adrDivisi &p);
+void deleteLastDivisi_103012400148(listDivisi &L, adrDivisi &p);
+void deleteAfterDivisi_103012400148(listDivisi &L, adrDivisi Prec, adrDivisi &p);
+adrDivisi searchDivisi_103012400148(listDivisi L, string nama);
+void printDivisi_103012400148(listDivisi L);
 
 #endif // DIVISI_H_INCLUDED

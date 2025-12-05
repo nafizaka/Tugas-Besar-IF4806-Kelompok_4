@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void deleteFirstPegawai(adrDivisi &p, adrPegawai &q){
+void deleteFirstPegawai_103012430046(adrDivisi &p, adrPegawai &q){
     if (isEmptyPegawai_103012400148(p)){
         cout << "List Kosong!" << endl;
     } else  if (p->firstPegawai->next == nullptr){
@@ -16,7 +16,7 @@ void deleteFirstPegawai(adrDivisi &p, adrPegawai &q){
         q->next = nullptr;
     }
 }
-void deleteLastPegawai(adrDivisi &p, adrPegawai &q){
+void deleteLastPegawai_103012430046(adrDivisi &p, adrPegawai &q){
     if (isEmptyPegawai_103012400148(p)){
         cout << "List Kosong!" << endl;
     } else  if (p->firstPegawai->next == nullptr){
@@ -31,7 +31,7 @@ void deleteLastPegawai(adrDivisi &p, adrPegawai &q){
         a->next = nullptr;
     }
 }
-void deleteAfterPegawai(adrDivisi &p, adrPegawai prec, adrPegawai &q){
+void deleteAfterPegawai_103012430046(adrDivisi &p, adrPegawai prec, adrPegawai &q){
     if (prec == nullptr || p->firstPegawai == nullptr){
         cout << "List Kosong!" << endl;
     } else {
@@ -40,7 +40,7 @@ void deleteAfterPegawai(adrDivisi &p, adrPegawai prec, adrPegawai &q){
         q->next = nullptr;
     }
 }
-adrPegawai searchPegawai(adrDivisi p, string id){
+adrPegawai searchPegawai_103012430046(adrDivisi p, string id){
     adrPegawai q = p->firstPegawai;
 
     while (q != nullptr && q->info.id != id){
@@ -48,7 +48,7 @@ adrPegawai searchPegawai(adrDivisi p, string id){
     }
     return q;
 }
-void printPegawai(adrDivisi p){
+void printPegawai_103012430046(adrDivisi p){
     adrPegawai q = p->firstPegawai;
     int i = 0;
 

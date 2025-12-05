@@ -21,6 +21,7 @@ struct elmDivisi {
 
 struct listDivisi {
     adrDivisi first;
+    adrDivisi last;
 };
 
 void createListDivisi(listDivisi &L);

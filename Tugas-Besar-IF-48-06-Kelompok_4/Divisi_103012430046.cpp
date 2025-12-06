@@ -1,15 +1,15 @@
 #include <iostream>
-#include "Pegawai.h"
-#include "Divisi.h"
+#include "header.h"
 
 using namespace std;
 
 
 void createListDivisi_103012430046(listDivisi &L){
     L.first = nullptr;
+    L.last = nullptr;
 }
 bool isEmptyDivisi_103012430046(listDivisi L){
-    return (L.first == nullptr);
+    return (L.first == nullptr && L.last == nullptr);
 }
 
 adrDivisi createElemenDivisi_103012430046(Divisi x){
@@ -31,6 +31,7 @@ adrDivisi createElemenDivisi_103012430046(Divisi x){
 void insertFirstDivisi_103012430046(listDivisi &L, adrDivisi p){
     if (isEmptyDivisi_103012430046(L)){
         L.first = p;
+        L.last = p;
     } else {
         p->next = L.first;
         L.first->prev = p;
@@ -41,22 +42,18 @@ void insertLastDivisi_103012430046(listDivisi &L, adrDivisi p){
     if (isEmptyDivisi_103012430046(L)){
         L.first = p;
     } else {
-        adrDivisi q;
-        q = L.first;
-        while (q->next != nullptr){
-            q = q->next;
-        }
-        p->prev = q;
-        q->next = p;
+        p->prev = L.last;
+        L.last->next = p;
+        L.last = p;
     }
 }
 
 void insertAfterDivisi_103012430046(listDivisi &L, adrDivisi prec, adrDivisi p){
-    if (prec == nullptr || L.first == nullptr){
+    if (prec == nullptr || isEmptyDivisi_103012430046(L)){
         cout << "List Kosong!" << endl;
     } else {
         p->next = prec->next;
-        p->prec = prec;
+        p->prev = prec;
         prec->next->prev = p;
         prec->next = p;
     }

@@ -1,6 +1,5 @@
 #include <iostream>
-#include "Pegawai.h"
-#include "Divisi.h"
+#include "header.h"
 
 using namespace std;
 

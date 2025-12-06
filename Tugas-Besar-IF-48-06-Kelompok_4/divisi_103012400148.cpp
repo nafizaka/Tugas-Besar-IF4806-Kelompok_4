@@ -1,6 +1,5 @@
 #include <iostream>
-#include "Pegawai.h"
-#include "Divisi.h"
+#include "header.h"
 
 using namespace std;
 
@@ -32,24 +31,24 @@ void deleteLastDivisi_103012400148(listDivisi &L, adrDivisi &p){
         p->prev = nullptr;
     }
 }
-void deleteAfterDivisi_103012400148(listDivisi &L, adrDivisi Prec, adrDivisi &p){
-    if (Prec == nullptr || Prec->next == nullptr){\
+void deleteAfterDivisi_103012400148(listDivisi &L, adrDivisi prec, adrDivisi &p){
+    if (prec == nullptr || prec->next == nullptr){
         p = nullptr;
         cout << "Tidak ada yang bisa di hapus.";
-    }else if (Prec->next == L.last){
+    }else if (prec->next == L.last){
         p = L.last;
         deleteLastDivisi_103012400148(L, p);
     }else {
-        p = Prec->next;
-        Prec->next = p->next;
-        p->next->Prev = Prec;
+        p = prec->next;
+        prec->next = p->next;
+        p->next->prev = prec;
         p->next = nullptr;
-        p->Prev = nullptr;
+        p->prev = nullptr;
     }
 }
 adrDivisi searchDivisi_103012400148(listDivisi L, string nama){
-    adrDivisi q = p->L.first;
-    while (q != nullptr && q->info.id != nama){
+    adrDivisi q = L.first;
+    while (q != nullptr && q->info.namaDiv != nama){
         q = q->next;
     }
     return q;

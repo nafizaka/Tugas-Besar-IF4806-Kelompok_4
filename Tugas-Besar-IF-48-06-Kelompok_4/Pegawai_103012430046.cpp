@@ -1,6 +1,5 @@
 #include <iostream>
-#include "Pegawai.h"
-#include "Divisi.h"
+#include "header.h"
 
 using namespace std;
 
@@ -59,7 +58,12 @@ void printPegawai_103012430046(adrDivisi p){
         cout << "ID: "<< q->info.id << endl;
         cout << "Jabatan: " << q->info.jabatan << endl;
         cout << "Gaji: " << q->info.gaji << endl;
-        cout << "Status: " << q->info.status << endl;
+        cout << "Status: ";
+        if (q->info.status) {
+                cout<<"Aktif" << endl;
+            }else {
+                cout<<"Tidak Aktif" << endl;
+            }
         q = q->next;
         cout << endl;
     }

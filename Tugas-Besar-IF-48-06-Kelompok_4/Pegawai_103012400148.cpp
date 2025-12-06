@@ -1,14 +1,13 @@
 #include <iostream>
-#include "Pegawai.h"
-#include "Divisi.h"
+#include "header.h"
 
 using namespace std;
 
-adrPegawai createElemenPegawai_103012400148(pegawai x){
+adrPegawai createElemenPegawai_103012400148(Pegawai x){
     adrPegawai p;
     p = new elemenPegawai;
     p->info.nama = x.nama;
-    p->info.id = x.id
+    p->info.id = x.id;
     p->info.jabatan = x.jabatan;
     p->info.gaji = x.gaji;
     p->info.status = x.status;
@@ -24,7 +23,7 @@ bool isEmptyPegawai_103012400148(adrDivisi p){
 }
 void insertFirstPegawai_103012400148(adrDivisi &p, adrPegawai q);{
     if (p == nullptr || q == nullptr){
-        cout << "Divisi tidak ditemukan."
+        cout << "Divisi tidak ditemukan." << endl;
     }else if(p->firstPegawai == nullptr) {
         p->firstPegawai = q;
     }else {
@@ -34,7 +33,7 @@ void insertFirstPegawai_103012400148(adrDivisi &p, adrPegawai q);{
 }
 void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q){
     if (p == nullptr || q == nullptr){
-        cout << "Divisi tidak ditemukan."
+        cout << "Divisi tidak ditemukan." << endl;
     }else if(p->firstPegawai == nullptr) {
         p->firstPegawai = q;
     }else {
@@ -49,7 +48,7 @@ void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q){
 void insertAfterPegawai_103012400148(adrDivisi &p, adrPegawai prec, adrPegawai q){
     if (prec != nullptr){
         if (p == nullptr || q == nullptr){
-            cout << "Divisi tidak ditemukan.";
+            cout << "Divisi tidak ditemukan."; << endl;
         }else{
             q->next = prec->next;
             prec->next = q;

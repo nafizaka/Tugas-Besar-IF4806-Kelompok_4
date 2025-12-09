@@ -62,5 +62,13 @@ void deleteAfterPegawai_103012430046(adrDivisi &p, adrPegawai prec, adrPegawai &
 adrPegawai searchPegawai_103012430046(adrDivisi p, string id);
 void printPegawai_103012430046(adrDivisi p);
 
+// mengurutkan data divisi dari pegawai terbanyak
+// menampilkan pegawai dengan jabatan tertentu
+// menambahkan pegawai
+
+// Main menu admin
+void mainmenu();
+// Main menu user
+
 
 #endif // HEADER_H_INCLUDED

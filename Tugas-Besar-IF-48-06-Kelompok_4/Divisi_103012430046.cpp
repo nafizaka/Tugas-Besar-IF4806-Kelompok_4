@@ -58,24 +58,3 @@ void insertAfterDivisi_103012430046(listDivisi &L, adrDivisi prec, adrDivisi p){
         prec->next = p;
     }
 }
-
-void mainmenu(){
-    cout << "----- Menu Aplikasi Kantor -----" << endl;
-    cout << "-------------- By  -------------" << endl;
-    cout << "--Pangeran Clevario Decaesario--" << endl;
-    cout << "---Muhammad Nafiz Safaraz D.A---" << endl;
-    cout << "1. Admin -----------------------" << endl;
-    cout << "2. User ------------------------" << endl;
-    cout << "3. Exit ------------------------" << endl;
-    cout << "[1,2,3?] -----------------------" << endl;
-    int x;
-    cin >> x;
-    if (x == 1){
-
-    }else if (x == 2){
-
-    }else if (x == 3){
-
-    }
-}
-

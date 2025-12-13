@@ -21,7 +21,7 @@ bool isEmptyPegawai_103012400148(adrDivisi p){
         return (p->firstPegawai == nullptr);
     }
 }
-void insertFirstPegawai_103012400148(adrDivisi &p, adrPegawai q);{
+void insertFirstPegawai_103012400148(adrDivisi &p, adrPegawai q){
     if (p == nullptr || q == nullptr){
         cout << "Divisi tidak ditemukan." << endl;
     }else if(p->firstPegawai == nullptr) {
@@ -37,10 +37,10 @@ void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q){
     }else if(p->firstPegawai == nullptr) {
         p->firstPegawai = q;
     }else {
-        adrDivisi first;
+        adrPegawai first;
         first = p->firstPegawai;
         while (first->next != nullptr){
-            first = first->next
+            first = first->next;
         }
         first->next = q;
     }
@@ -48,7 +48,7 @@ void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q){
 void insertAfterPegawai_103012400148(adrDivisi &p, adrPegawai prec, adrPegawai q){
     if (prec != nullptr){
         if (p == nullptr || q == nullptr){
-            cout << "Divisi tidak ditemukan."; << endl;
+            cout << "Divisi tidak ditemukan."<< endl;
         }else{
             q->next = prec->next;
             prec->next = q;

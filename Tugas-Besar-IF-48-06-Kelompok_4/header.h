@@ -52,7 +52,7 @@ adrDivisi searchDivisi_103012400148(listDivisi L, string nama);
 void printDivisi_103012400148(listDivisi L);
 
 adrPegawai createElemenPegawai_103012400148(Pegawai x);
-bool isEmpty_103012400148(adrDivisi p);
+bool isEmptyPegawai_103012400148(adrDivisi p);
 void insertFirstPegawai_103012400148(adrDivisi &p, adrPegawai q);
 void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q);
 void insertAfterPegawai_103012400148(adrDivisi &p, adrPegawai prec, adrPegawai q);
@@ -69,6 +69,9 @@ void printPegawai_103012430046(adrDivisi p);
 // Main menu admin
 void mainmenu();
 // Main menu user
+void menuUser();
+// Main menu admin
+void menuAdmin();
 
 
 #endif // HEADER_H_INCLUDED

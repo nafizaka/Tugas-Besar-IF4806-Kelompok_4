@@ -69,9 +69,11 @@ void cariPegawaiByDivisiUmur_103012400148(listDivisi L);
 // mencari pegawai berdasarkan id & nama
 void cariPegawaiByIdNama_103012400148(listDivisi L);
 // menampilkan pegawai junior / senior
-void printPegawaiSeniorJunior_103012400148(listDivisi L);
+void printPegawaiSeniorJunior_103012400148(listDivisi L, int tipe);
 // menampilkan status pegawai
 void printPegawaiStatus_103012400148(listDivisi L, int mode);
+// menampilkan pegawai dengan rentang umur tertentu
+void printPegawaiRentangUmur_103012400148(listDivisi L);
 // menambahkan semua pegawai dari setiap divisi
 void printAllPegawai_103012400148(listDivisi L);
 // lihat jumlah pegawai per divisi
@@ -84,6 +86,17 @@ void lihatRataRataUmurPegawai_103012400148(listDivisi L);
 void lihatTotalPegawaiAktifNonaktif_103012400148(listDivisi L);
 // lihat jumlah seluruh pegawai
 void lihatTotalSeluruhPegawai_103012400148(listDivisi L);
+// mengubah nama atau status pegawai
+void editNamaStatusPegawai_103012400148(listDivisi &L);
+// menghapus pegawai berdasarkan id & divisi
+void hapusPegawaiByID_103012400148(listDivisi &L);
+// menambah pegawai baru
+void tambahPegawai_103012400148(listDivisi &L);
+// menghapus berdasarkan status
+void hapusPegawaiByStatusDivisi_103012400148(listDivisi &L);
+
+
+
 
 // Main menu admin
 void mainmenu();

@@ -29,6 +29,9 @@ void mainmenu(){
 
 void menuUser() {
     int pilih;
+    listDivisi L;
+    createListDivisi_103012430046(L);
+
     cout << "============================================" << endl;
     cout << "                 MENU USER                  " << endl;
     cout << "============================================" << endl;
@@ -60,7 +63,7 @@ void menuUser() {
                     printAllPegawai_103012400148(L);
                     menuUser();
                     return;
-                case 2:
+                case 2: {
                     string namaDiv;
                     cout << "Masukkan Nama Divisi: ";
                     cin >> namaDiv;
@@ -71,29 +74,32 @@ void menuUser() {
                     } else {
                         printPegawai_103012430046(p);
                     }
+
+                    menuUser();
                     return;
+                }
                 case 3:
-                cout << "============================================" << endl;
-                cout << "                 MENU USER                  " << endl;
-                cout << "============================================" << endl;
-                cout << "1. Lihat Karyawan Senior" << endl;
-                cout << "2. Lihat Karyawan Junior" << endl;
-                cout << "4. Kembali ke Main User" << endl;
-                cout << "--------------------------------------------" << endl;
-                cout << " Masukkan pilihan Anda : ";
-                cin >> pilih;
-                switch (pilih){
-                    case 1:
-                        printPegawaiSeniorJunior_103012400148(L, 1);
-                        menuUser();
-                        return;
-                    case 2:
-                        printPegawaiSeniorJunior_103012400148(L, 2);
-                        menuUser();
-                        return;
-                    case 3:
-                        menuUser();
-                        return;
+                    cout << "============================================" << endl;
+                    cout << "                 MENU USER                  " << endl;
+                    cout << "============================================" << endl;
+                    cout << "1. Lihat Karyawan Senior" << endl;
+                    cout << "2. Lihat Karyawan Junior" << endl;
+                    cout << "4. Kembali ke Main User" << endl;
+                    cout << "--------------------------------------------" << endl;
+                    cout << " Masukkan pilihan Anda : ";
+                    cin >> pilih;
+                    switch (pilih){
+                        case 1:
+                            printPegawaiSeniorJunior_103012400148(L, 1);
+                            menuUser();
+                            return;
+                        case 2:
+                            printPegawaiSeniorJunior_103012400148(L, 2);
+                            menuUser();
+                            return;
+                        case 3:
+                            menuUser();
+                            return;
                 }
                 case 4:
                     cout << "============================================" << endl;
@@ -191,23 +197,32 @@ void menuUser() {
             cout << "============================================" << endl;
             cout << "                 MENU USER                  " << endl;
             cout << "============================================" << endl;
-            cout << "1. Edit Nama Karyawan" << endl;
-            cout << "2. Edit Status Karyawan" << endl;
-            cout << "3. Hapus Berdasarkan ID" << endl;
-            cout << "4. Hapus Berdasarkan Status" << endl;
-            cout << "5. Tambah Karyawan" << endl;
-            cout << "7. Kembali ke Main User" << endl;
+            cout << "1. Edit Nama & Status Karyawan" << endl;
+            cout << "2. Hapus Berdasarkan ID" << endl;
+            cout << "3. Hapus Berdasarkan Status" << endl;
+            cout << "4. Tambah Karyawan" << endl;
+            cout << "5. Kembali ke Main User" << endl;
             cout << "--------------------------------------------" << endl;
             cout << " Masukkan pilihan Anda : ";
             cin >> pilih;
             switch (pilih){
                 case 1:
+                    editNamaStatusPegawai_103012400148(L);
+                    menuUser();
+                    return;
                 case 2:
+                    hapusPegawaiByID_103012400148(L);
+                    menuUser();
+                    return;
                 case 3:
+                    hapusPegawaiByStatusDivisi_103012400148(L);
+                    menuUser();
+                    return;
                 case 4:
+                    tambahPegawai_103012400148(L);
+                    menuUser();
+                    return;
                 case 5:
-                case 6:
-                case 7:
                     menuUser();
                     return;
             }
@@ -539,47 +554,57 @@ void inputInfoDivisi(Divisi &x){
 }
 void inputInfoPegawai(Pegawai &y){
     int idx;
-    cout << "Nama Divisi: ";
+    cout << "Nama Pegawai: ";
     cin >> y.nama;
+
     cout << "ID Pegawai: ";
     cin >> y.id;
+
     cout << "Jabatan Pegawai: ";
     cin >> y.jabatan;
-    cout << "Status Pegawai(1.Aktif || 2.Tidak): ";
+
+    cout << "Status Pegawai (1.Aktif || 2.Tidak): ";
     cin >> idx;
-    y.statusDiv = (idx == 1);
+    y.status = (idx == 1);
+
     cout << "Gaji Pegawai: ";
     cin >> y.gaji;
+
+    y.LamaBekerja = 0;
 }
 
 void dummy(listDivisi &L){
-    int idx,i,juml,jum;
+    int idx, i, juml, jum;
     adrDivisi p;
     adrPegawai q;
     Divisi x;
     Pegawai y;
+    string nama;
     idx = 1;
     cout << "Jumlah Divisi yang ingin dibuat: ";
     cin >> juml;
-    for (i=0;i<juml;i++){
+    for (i = 0; i < juml; i++){
         inputInfoDivisi(x);
         p = createElemenDivisi_103012430046(x);
-        insertFirstDivisi_103012430046(L,p);
+        insertFirstDivisi_103012430046(L, p);
     }
     while (idx == 1){
         cout << "Nama Divisi yang ingin ditambahkan Pegawai: ";
         cin >> nama;
+
         cout << "Jumlah Pegawai Yang ingin dimasukkan: ";
         cin >> jum;
-        p = searchDivisi_103012400148(L,nama);
+
+        p = searchDivisi_103012400148(L, nama);
         i = 0;
-        while (i<jum && p != nullptr){
+        while (i < jum && p != nullptr){
             inputInfoPegawai(y);
             q = createElemenPegawai_103012400148(y);
-            insertLastPegawai_103012400148(p,q);
+            insertLastPegawai_103012400148(p, q);
+            i++;
         }
         cout << "Apakah ingin menambahkan pegawai lagi?" << endl;
-        cout << "(1.Iya || 2.Tidak)?"
+        cout << "(1.Iya || 2.Tidak)?";  // ✅ ADA ;
         cin >> idx;
     }
 }

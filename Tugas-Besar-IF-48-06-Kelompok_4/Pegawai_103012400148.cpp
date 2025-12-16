@@ -26,9 +26,11 @@ void insertFirstPegawai_103012400148(adrDivisi &p, adrPegawai q){
         cout << "Divisi tidak ditemukan." << endl;
     }else if(p->firstPegawai == nullptr) {
         p->firstPegawai = q;
+        p->info.jumPegawai = p->info.jumPegawai+1;
     }else {
         q->next = p->firstPegawai;
         p->firstPegawai = q;
+        p->info.jumPegawai = p->info.jumPegawai+1;
     }
 }
 void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q){
@@ -36,6 +38,7 @@ void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q){
         cout << "Divisi tidak ditemukan." << endl;
     }else if(p->firstPegawai == nullptr) {
         p->firstPegawai = q;
+        p->info.jumPegawai = p->info.jumPegawai+1;
     }else {
         adrPegawai first;
         first = p->firstPegawai;
@@ -43,6 +46,7 @@ void insertLastPegawai_103012400148(adrDivisi &p, adrPegawai q){
             first = first->next;
         }
         first->next = q;
+        p->info.jumPegawai = p->info.jumPegawai+1;
     }
 }
 void insertAfterPegawai_103012400148(adrDivisi &p, adrPegawai prec, adrPegawai q){
@@ -52,6 +56,7 @@ void insertAfterPegawai_103012400148(adrDivisi &p, adrPegawai prec, adrPegawai q
         }else{
             q->next = prec->next;
             prec->next = q;
+            p->info.jumPegawai = p->info.jumPegawai+1;
         }
     }
 }

@@ -72,6 +72,10 @@ void mainmenu();
 void menuUser();
 // Main menu admin
 void menuAdmin();
+// Prosedur Tambahan
+void dummy(listDivisi &L);
+void inputInfoDivisi(Divisi &x);
+void inputInfoPegawai(Pegawai &y);
 
 
 #endif // HEADER_H_INCLUDED

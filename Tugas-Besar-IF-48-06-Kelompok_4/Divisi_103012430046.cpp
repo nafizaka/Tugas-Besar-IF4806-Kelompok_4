@@ -18,7 +18,7 @@ adrDivisi createElemenDivisi_103012430046(Divisi x){
     p->info.namaDiv = x.namaDiv;
     p->info.ID_Div = x.ID_Div;
     p->info.kepalaDiv = x.kepalaDiv;
-    p->info.jumPegawai = x.jumPegawai;
+    p->info.jumPegawai = 0;
     p->info.statusDiv = x.statusDiv;
     p->info.lokasiDiv = x.lokasiDiv;
     p->next = nullptr;
@@ -41,6 +41,7 @@ void insertFirstDivisi_103012430046(listDivisi &L, adrDivisi p){
 void insertLastDivisi_103012430046(listDivisi &L, adrDivisi p){
     if (isEmptyDivisi_103012430046(L)){
         L.first = p;
+        L.last = p;
     } else {
         p->prev = L.last;
         L.last->next = p;
@@ -50,11 +51,15 @@ void insertLastDivisi_103012430046(listDivisi &L, adrDivisi p){
 
 void insertAfterDivisi_103012430046(listDivisi &L, adrDivisi prec, adrDivisi p){
     if (prec == nullptr || isEmptyDivisi_103012430046(L)){
-        cout << "List Kosong!" << endl;
+        cout << "List Kosong atau prec tidak ada!" << endl;
     } else {
         p->next = prec->next;
         p->prev = prec;
-        prec->next->prev = p;
+        if (prec->next != nullptr) {
+            prec->next->prev = p;
+        } else {
+            L.last = p;
+        }
         prec->next = p;
     }
 }

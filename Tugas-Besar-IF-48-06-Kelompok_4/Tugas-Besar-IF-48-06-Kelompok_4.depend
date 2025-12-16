@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1765025073 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012400148.cpp
+1765026330 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012400148.cpp
 	<iostream>
 	"header.h"
 
@@ -8,25 +8,23 @@
 
 1764789535 c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi.h
 
-1765024855 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012430046.cpp
+1765879482 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012430046.cpp
 	<iostream>
 	"header.h"
 
-1765024789 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\main.cpp
+1765239746 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\main.cpp
 	<iostream>
 	"header.h"
 
-1764610672 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\pegawai_103012400148.cpp
+1765878634 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\pegawai_103012400148.cpp
 	<iostream>
-	"Pegawai.h"
-	"Divisi.h"
+	"header.h"
 
-1764603196 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\pegawai_103012430046.cpp
+1765026330 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\pegawai_103012430046.cpp
 	<iostream>
-	"Pegawai.h"
-	"Divisi.h"
+	"header.h"
 
-1765024836 c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\header.h
+1765879482 c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\header.h
 
 1765608342 source:d:\telkom university\semester 3\struktur data\tugas-besar-if4806-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012400148.cpp
 	<iostream>

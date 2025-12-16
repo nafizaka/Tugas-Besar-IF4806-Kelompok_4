@@ -77,3 +77,55 @@ void printDivisi_103012400148(listDivisi L) {
         }
     }
 }
+void lihatDivisiTerbanyak_103012400148(listDivisi L) {
+    if (L.first == nullptr) {
+        cout << "Data divisi kosong!" << endl;
+        return;
+    }
+
+    adrDivisi p = L.first;
+    int maxPegawai = -1;
+
+    // 🔹 Cari jumlah maksimum
+    while (p != nullptr) {
+        int count = 0;
+        adrPegawai q = p->firstPegawai;
+        while (q != nullptr) {
+            count++;
+            q = q->next;
+        }
+
+        if (count > maxPegawai) {
+            maxPegawai = count;
+        }
+        p = p->next;
+    }
+
+    if (maxPegawai <= 0) {
+        cout << "Belum ada pegawai di semua divisi." << endl;
+        return;
+    }
+
+    // 🔹 Tampilkan divisi dengan jumlah maksimum
+    cout << "==================================" << endl;
+    cout << "Divisi Dengan Karyawan Terbanyak" << endl;
+    cout << "Jumlah Maksimum : " << maxPegawai << endl;
+    cout << "==================================" << endl;
+
+    p = L.first;
+    while (p != nullptr) {
+        int count = 0;
+        adrPegawai q = p->firstPegawai;
+        while (q != nullptr) {
+            count++;
+            q = q->next;
+        }
+
+        if (count == maxPegawai) {
+            cout << "Divisi : " << p->info.namaDiv << endl;
+            cout << "Jumlah : " << count << " karyawan" << endl;
+            cout << "--------------------------" << endl;
+        }
+        p = p->next;
+    }
+}

@@ -72,6 +72,8 @@ void printPegawai_103012430046(adrDivisi p){
         cout << "Nama: " << q->info.nama << endl;
         cout << "ID: "<< q->info.id << endl;
         cout << "Jabatan: " << q->info.jabatan << endl;
+        cout << "Umur: " << q->info.umur << endl;
+        cout <<"Lama Bekerja: " << q->info.LamaBekerja << endl;
         cout << "Gaji: " << q->info.gaji << endl;
         cout << "Status: ";
         if (q->info.status) {

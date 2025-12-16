@@ -24,6 +24,9 @@ void mainmenu(){
         menuUser();
     }else if (x == 3){
         cout << "------------- Terima Kasih --------------" << endl;
+    }else {
+        cout << "------------ Pilihan Salah --------------" << endl;
+        mainmenu();
     }
 }
 
@@ -31,6 +34,7 @@ void menuUser() {
     int pilih;
     listDivisi L;
     createListDivisi_103012430046(L);
+    dummy(L);
 
     cout << "============================================" << endl;
     cout << "                 MENU USER                  " << endl;
@@ -361,20 +365,24 @@ void menuAdmin(){
                             cout << "Mencari Divisi dengan nama apa? ";
                             cin >> nama;
                             p = searchDivisi_103012400148(L,nama);
-                            cout << "==== Data Divisi ====" << endl;
-                            cout << "Nama Divisi  : " << p->info.namaDiv << endl;
-                            cout << "ID Divisi    : " << p->info.ID_Div << endl;
-                            cout << "Kepala Divisi: " << p->info.kepalaDiv << endl;
-                            cout << "Jumlah Pegawai: " << p->info.jumPegawai << endl;
-                            cout << "Status Divisi : ";
-                            if (p->info.statusDiv) {
-                                cout<<"Aktif";
-                            }else {
-                                cout<<"Tidak Aktif";
+                            if (p!=nullptr){
+                                cout << "==== Data Divisi ====" << endl;
+                                cout << "Nama Divisi  : " << p->info.namaDiv << endl;
+                                cout << "ID Divisi    : " << p->info.ID_Div << endl;
+                                cout << "Kepala Divisi: " << p->info.kepalaDiv << endl;
+                                cout << "Jumlah Pegawai: " << p->info.jumPegawai << endl;
+                                cout << "Status Divisi : ";
+                                if (p->info.statusDiv) {
+                                    cout<<"Aktif";
+                                }else {
+                                    cout<<"Tidak Aktif";
+                                }
+                                cout << endl;
+                                cout << "Lokasi Divisi: " << p->info.lokasiDiv << endl;
+                                cout << endl;
+                            } else {
+                                cout << "Divisi tidak ditemukan!" << endl;
                             }
-                            cout << endl;
-                            cout << "Lokasi Divisi: " << p->info.lokasiDiv << endl;
-                            cout << endl;
                         case 2:
                             menuAdmin();
                         default: cout << "Pilihan salah!";
@@ -511,19 +519,27 @@ void menuAdmin(){
                         case 1:
                             cout << "Nama Divisi dari pegawai yang ingin dicari: ";
                             cin >> nama;
+                            p = nullptr;
                             p = searchDivisi_103012400148(L,nama);
                             cout << "Mencari Pegawai dengan id?: ";
                             cin >> nama;
-                            q = searchPegawai_103012430046(p,nama);
-                            cout << "Nama: " << q->info.nama << endl;
-                            cout << "ID: "<< q->info.id << endl;
-                            cout << "Jabatan: " << q->info.jabatan << endl;
-                            cout << "Gaji: " << q->info.gaji << endl;
-                            cout << "Status: ";
-                            if (q->info.status) {
-                                cout<<"Aktif" << endl;
-                            }else {
-                                cout<<"Tidak Aktif" << endl;
+                            if (p != nullptr){
+                                q = nullptr;
+                                q = searchPegawai_103012430046(p,nama);
+                            }
+                            if (q != nullptr && p != nullptr){
+                                cout << "Nama: " << q->info.nama << endl;
+                                cout << "ID: "<< q->info.id << endl;
+                                cout << "Jabatan: " << q->info.jabatan << endl;
+                                cout << "Gaji: " << q->info.gaji << endl;
+                                cout << "Status: ";
+                                if (q->info.status) {
+                                    cout<<"Aktif" << endl;
+                                }else {
+                                    cout<<"Tidak Aktif" << endl;
+                                }
+                            } else {
+                                cout << "Pegawai tidak ditemukan!" << endl;
                             }
                         case 2:
                             menuAdmin();
@@ -592,19 +608,25 @@ void dummy(listDivisi &L){
         cout << "Nama Divisi yang ingin ditambahkan Pegawai: ";
         cin >> nama;
 
-        cout << "Jumlah Pegawai Yang ingin dimasukkan: ";
-        cin >> jum;
-
         p = searchDivisi_103012400148(L, nama);
-        i = 0;
-        while (i < jum && p != nullptr){
-            inputInfoPegawai(y);
-            q = createElemenPegawai_103012400148(y);
-            insertLastPegawai_103012400148(p, q);
-            i++;
+        if (p == nullptr){
+            cout << "Divisi tidak ditemukan!" << endl;
+            cout << "(1.Coba lagi || 2.Keluar)? ";
+            cin >> idx;
+        } else {
+
+            cout << "Jumlah Pegawai Yang ingin dimasukkan: ";
+            cin >> jum;
+
+            i = 0;
+            for (i = 0; i < jum; i++){
+                inputInfoPegawai(y);
+                q = createElemenPegawai_103012400148(y);
+                insertLastPegawai_103012400148(p, q);
+            }
+            cout << "Apakah ingin menambahkan pegawai lagi?" << endl;
+            cout << "(1.Iya || 2.Tidak)? ";
+            cin >> idx;
         }
-        cout << "Apakah ingin menambahkan pegawai lagi?" << endl;
-        cout << "(1.Iya || 2.Tidak)?";  // ✅ ADA ;
-        cin >> idx;
     }
 }

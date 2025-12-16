@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 void mainmenu(){
     cout << "============================================" << endl;
     cout << "          SISTEM APLIKASI KANTOR            " << endl;
@@ -24,22 +23,20 @@ void mainmenu(){
     }else if (x == 2){
         menuUser();
     }else if (x == 3){
-        cout << "Terima Kasih." << endl;
+        cout << "------------- Terima Kasih --------------" << endl;
     }
 }
-void menuUser() {
-    int pilih, Lpilih;
 
-    dummy(&L);
+void menuUser() {
+    int pilih;
     cout << "============================================" << endl;
     cout << "                 MENU USER                  " << endl;
     cout << "============================================" << endl;
     cout << "1. Lihat Karyawan" << endl;
     cout << "2. Cari Karyawan" << endl;
     cout << "3. Lihat Jumlah Karyawan" << endl;
-    cout << "4. Hapus Karyawan" << endl;
-    cout << "5. Reset Data Karyawan" << endl;
-    cout << "6. Kembali Ke Menu Utama" << endl;
+    cout << "4. Edit Data Karyawan" << endl;
+    cout << "5. Kembali Ke Menu Utama" << endl;
     cout << "--------------------------------------------" << endl;
     cout << " Masukkan pilihan Anda : ";
     cin >> pilih;
@@ -49,25 +46,174 @@ void menuUser() {
             cout << "============================================" << endl;
             cout << "                 MENU USER                  " << endl;
             cout << "============================================" << endl;
-            cout << "1. Lihat Karyawan Berdasarkan Divisi" << endl;
-            cout << "2. Lihat Seluruh Karyawan Dari Paling Senior" << endl;
-            cout << "3. Lihat Karyawan Yang Baru Masuk" << endl;
-            cout << "4. Lihat Karyawan Yang Akan Pensiun" << endl;
-            cout << "5. Kembali ke Main Menu" << endl;
+            cout << "1. Lihat Semua Karyawan" << endl;
+            cout << "2. Lihat Karyawan Berdasarkan Divisi" << endl;
+            cout << "3. Lihat Berdasarkan masa kerja (senior / Junior)" << endl;
+            cout << "4. Lihat Berdasarkan status (aktif / akan pensiun)" << endl;
+            cout << "5. Lihat Berdasarkan rentang umur" << endl;
+            cout << "6. Kembali ke Main User" << endl;
             cout << "--------------------------------------------" << endl;
             cout << " Masukkan pilihan Anda : ";
-            cin >> Lpilih;
-            switch (Lpilih){
+            cin >> pilih;
+            switch (pilih){
+                case 1:
+                    printAllPegawai_103012400148(L);
+                    menuUser();
+                    return;
+                case 2:
+                    string namaDiv;
+                    cout << "Masukkan Nama Divisi: ";
+                    cin >> namaDiv;
+
+                    adrDivisi p = searchDivisi_103012400148(L, namaDiv);
+                    if (p == nullptr){
+                        cout << "Divisi tidak ditemukan!" << endl;
+                    } else {
+                        printPegawai_103012430046(p);
+                    }
+                    return;
+                case 3:
+                cout << "============================================" << endl;
+                cout << "                 MENU USER                  " << endl;
+                cout << "============================================" << endl;
+                cout << "1. Lihat Karyawan Senior" << endl;
+                cout << "2. Lihat Karyawan Junior" << endl;
+                cout << "4. Kembali ke Main User" << endl;
+                cout << "--------------------------------------------" << endl;
+                cout << " Masukkan pilihan Anda : ";
+                cin >> pilih;
+                switch (pilih){
+                    case 1:
+                        printPegawaiSeniorJunior_103012400148(L, 1);
+                        menuUser();
+                        return;
+                    case 2:
+                        printPegawaiSeniorJunior_103012400148(L, 2);
+                        menuUser();
+                        return;
+                    case 3:
+                        menuUser();
+                        return;
+                }
+                case 4:
+                    cout << "============================================" << endl;
+                    cout << "                 MENU USER                  " << endl;
+                    cout << "============================================" << endl;
+                    cout << "1. Lihat Karyawan Senior" << endl;
+                    cout << "2. Lihat Karyawan Junior" << endl;
+                    cout << "4. Kembali ke Main User" << endl;
+                    cout << "--------------------------------------------" << endl;
+                    cout << " Masukkan pilihan Anda : ";
+                     cin >> pilih;
+                    switch (pilih){
+                    case 1:
+                        printPegawaiStatus_103012400148(L, 1);
+                        menuUser();
+                        return;
+                    case 2:
+                        printPegawaiStatus_103012400148(L, 2);
+                        menuUser();
+                        return;
+                    case 3:
+                        menuUser();
+                        return;
+                }
+                case 5:
+                    printPegawaiRentangUmur_103012400148(L);
+                    menuUser();
+                    return;
+                case 6:
+                    menuUser();
+                    return;
+            }
+        case 2:
+            cout << "============================================" << endl;
+            cout << "                 MENU USER                  " << endl;
+            cout << "============================================" << endl;
+            cout << "1. Cari Berdasarkan ID & Nama" << endl;
+            cout << "2. Cari Berdasarkan Divisi & Umur" << endl;
+            cout << "3. Kembali ke Main User" << endl;
+            cout << "--------------------------------------------" << endl;
+            cout << " Masukkan pilihan Anda : ";
+            cin >> pilih;
+            switch (pilih){
+                case 1:
+                    cariPegawaiByIdNama_103012400148(L);
+                    menuUser();
+                    return;
+                case 2:
+                    cariPegawaiByDivisiUmur_103012400148(L);
+                    menuUser();
+                    return;
+                case 3:
+                    menuUser();
+                    return;
+            }
+        case 3:
+            cout << "============================================" << endl;
+            cout << "                 MENU USER                  " << endl;
+            cout << "============================================" << endl;
+            cout << "1. Lihat Jumlah Karyawan Per Divisi" << endl;
+            cout << "2. Lihat Divisi Dengan Karyawan Terbanyak" << endl;
+            cout << "3. Lihat Rata-Rata Umur Pegawai" << endl;
+            cout << "4. Lihat Total Karyawan ( Aktif / Nonaktif )" << endl;
+            cout << "5. Lihat Total Seluruh Karyawan" << endl;
+            cout << "6. Kembali ke Main User" << endl;
+            cout << "--------------------------------------------" << endl;
+            cout << " Masukkan pilihan Anda : ";
+             cin >> pilih;
+            switch (pilih){
+                case 1:
+                    lihatJumlahPegawaiPerDivisi_103012400148(L);
+                    menuUser();
+                    return;
+                case 2:
+                    lihatDivisiTerbanyak_103012400148(L);
+                    menuUser();
+                    return;
+                case 3:
+                    lihatRataRataUmurPegawai_103012400148(L);
+                    menuUser();
+                    return;
+                case 4:
+                    lihatTotalPegawaiAktifNonaktif_103012400148(L);
+                    menuUser();
+                    return;
+                case 5:
+                    lihatTotalSeluruhPegawai_103012400148(L);
+                    menuUser();
+                    return;
+                case 6:
+                    menuUser();
+                    return;
+            }
+        case 4:
+            cout << "============================================" << endl;
+            cout << "                 MENU USER                  " << endl;
+            cout << "============================================" << endl;
+            cout << "1. Edit Nama Karyawan" << endl;
+            cout << "2. Edit Status Karyawan" << endl;
+            cout << "3. Hapus Berdasarkan ID" << endl;
+            cout << "4. Hapus Berdasarkan Status" << endl;
+            cout << "5. Tambah Karyawan" << endl;
+            cout << "7. Kembali ke Main User" << endl;
+            cout << "--------------------------------------------" << endl;
+            cout << " Masukkan pilihan Anda : ";
+            cin >> pilih;
+            switch (pilih){
                 case 1:
                 case 2:
                 case 3:
                 case 4:
                 case 5:
+                case 6:
+                case 7:
+                    menuUser();
+                    return;
             }
-        case 2:
-        case 3:
-        case 4:
-        case 5: mainmenu();
+        case 5:
+            mainmenu();
+            return;
         default: cout << "Pilihan salah!";
     }
 }

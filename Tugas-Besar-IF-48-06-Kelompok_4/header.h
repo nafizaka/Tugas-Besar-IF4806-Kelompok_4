@@ -18,6 +18,8 @@ struct Pegawai {
     string nama;
     string id;
     string jabatan;
+    int umur;
+    int LamaBekerja;
     int gaji;
     bool status;
 };
@@ -38,7 +40,7 @@ struct listDivisi {
     adrDivisi first;
     adrDivisi last;
 };
-
+//Fitur Divisi
 void createListDivisi_103012430046(listDivisi &L);
 bool isEmptyDivisi_103012430046(listDivisi L);
 adrDivisi createElemenDivisi_103012430046(Divisi x);
@@ -50,7 +52,7 @@ void deleteLastDivisi_103012400148(listDivisi &L, adrDivisi &p);
 void deleteAfterDivisi_103012400148(listDivisi &L, adrDivisi Prec, adrDivisi &p);
 adrDivisi searchDivisi_103012400148(listDivisi L, string nama);
 void printDivisi_103012400148(listDivisi L);
-
+//Fitur Pegawai
 adrPegawai createElemenPegawai_103012400148(Pegawai x);
 bool isEmptyPegawai_103012400148(adrDivisi p);
 void insertFirstPegawai_103012400148(adrDivisi &p, adrPegawai q);
@@ -62,9 +64,26 @@ void deleteAfterPegawai_103012430046(adrDivisi &p, adrPegawai prec, adrPegawai &
 adrPegawai searchPegawai_103012430046(adrDivisi p, string id);
 void printPegawai_103012430046(adrDivisi p);
 
-// mengurutkan data divisi dari pegawai terbanyak
-// menampilkan pegawai dengan jabatan tertentu
-// menambahkan pegawai
+// mencari pegawai berdasarkan divisi & umur;
+void cariPegawaiByDivisiUmur_103012400148(listDivisi L);
+// mencari pegawai berdasarkan id & nama
+void cariPegawaiByIdNama_103012400148(listDivisi L);
+// menampilkan pegawai junior / senior
+void printPegawaiSeniorJunior_103012400148(listDivisi L);
+// menampilkan status pegawai
+void printPegawaiStatus_103012400148(listDivisi L, int mode);
+// menambahkan semua pegawai dari setiap divisi
+void printAllPegawai_103012400148(listDivisi L);
+// lihat jumlah pegawai per divisi
+void lihatJumlahPegawaiPerDivisi_103012400148(listDivisi L);
+// lihat divisi dengan jumlah pegawai terbanyak
+void lihatDivisiTerbanyak_103012400148(listDivisi L);
+// lihat jumlah rata-rata umur pegawai
+void lihatRataRataUmurPegawai_103012400148(listDivisi L);
+// lihat jumlah pegawai aktif & tidak aktif
+void lihatTotalPegawaiAktifNonaktif_103012400148(listDivisi L);
+// lihat jumlah seluruh pegawai
+void lihatTotalSeluruhPegawai_103012400148(listDivisi L);
 
 // Main menu admin
 void mainmenu();

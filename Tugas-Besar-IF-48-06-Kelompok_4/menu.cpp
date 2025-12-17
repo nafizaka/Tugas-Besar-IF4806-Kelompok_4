@@ -21,7 +21,10 @@ void mainmenu(){
     if (x == 1){
         menuAdmin();
     }else if (x == 2){
-        menuUser();
+        listDivisi L;
+        createListDivisi_103012430046(L);
+        dummy(L);
+        menuUser(L);
     }else if (x == 3){
         cout << "------------- Terima Kasih --------------" << endl;
     }else {
@@ -30,11 +33,8 @@ void mainmenu(){
     }
 }
 
-void menuUser() {
+void menuUser(listDivisi &L) {
     int pilih;
-    listDivisi L;
-    createListDivisi_103012430046(L);
-    dummy(L);
 
     cout << "============================================" << endl;
     cout << "                 MENU USER                  " << endl;
@@ -65,7 +65,7 @@ void menuUser() {
             switch (pilih){
                 case 1:
                     printAllPegawai_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 2: {
                     string namaDiv;
@@ -79,7 +79,7 @@ void menuUser() {
                         printPegawai_103012430046(p);
                     }
 
-                    menuUser();
+                    menuUser(L);
                     return;
                 }
                 case 3:
@@ -95,14 +95,18 @@ void menuUser() {
                     switch (pilih){
                         case 1:
                             printPegawaiSeniorJunior_103012400148(L, 1);
-                            menuUser();
+                            menuUser(L);
                             return;
                         case 2:
                             printPegawaiSeniorJunior_103012400148(L, 2);
-                            menuUser();
+                            menuUser(L);
                             return;
                         case 3:
-                            menuUser();
+                            menuUser(L);
+                            return;
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuUser(L);
                             return;
                 }
                 case 4:
@@ -118,22 +122,30 @@ void menuUser() {
                     switch (pilih){
                     case 1:
                         printPegawaiStatus_103012400148(L, 1);
-                        menuUser();
+                        menuUser(L);
                         return;
                     case 2:
                         printPegawaiStatus_103012400148(L, 2);
-                        menuUser();
+                        menuUser(L);
                         return;
                     case 3:
-                        menuUser();
+                        menuUser(L);
+                        return;
+                    default:
+                        cout << "Pilihan salah!" << endl;
+                        menuUser(L);
                         return;
                 }
                 case 5:
                     printPegawaiRentangUmur_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 6:
-                    menuUser();
+                    menuUser(L);
+                    return;
+                default:
+                    cout << "Pilihan salah!" << endl;
+                    menuUser(L);
                     return;
             }
         case 2:
@@ -149,14 +161,18 @@ void menuUser() {
             switch (pilih){
                 case 1:
                     cariPegawaiByIdNama_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 2:
                     cariPegawaiByDivisiUmur_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 3:
-                    menuUser();
+                    menuUser(L);
+                    return;
+                default:
+                    cout << "Pilihan salah!" << endl;
+                    menuUser(L);
                     return;
             }
         case 3:
@@ -175,26 +191,30 @@ void menuUser() {
             switch (pilih){
                 case 1:
                     lihatJumlahPegawaiPerDivisi_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 2:
                     lihatDivisiTerbanyak_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 3:
                     lihatRataRataUmurPegawai_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 4:
                     lihatTotalPegawaiAktifNonaktif_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 5:
                     lihatTotalSeluruhPegawai_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 6:
-                    menuUser();
+                    menuUser(L);
+                    return;
+                default:
+                    cout << "Pilihan salah!" << endl;
+                    menuUser(L);
                     return;
             }
         case 4:
@@ -212,28 +232,35 @@ void menuUser() {
             switch (pilih){
                 case 1:
                     editNamaStatusPegawai_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 2:
                     hapusPegawaiByID_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 3:
                     hapusPegawaiByStatusDivisi_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 4:
                     tambahPegawai_103012400148(L);
-                    menuUser();
+                    menuUser(L);
                     return;
                 case 5:
-                    menuUser();
+                    menuUser(L);
+                    return;
+                default:
+                    cout << "Pilihan salah!" << endl;
+                    menuUser(L);
                     return;
             }
         case 5:
             mainmenu();
             return;
-        default: cout << "Pilihan salah!";
+        default:
+            cout << "Pilihan salah!" << endl;
+            menuUser(L);
+            return;
     }
 }
 
@@ -286,10 +313,14 @@ void menuAdmin(){
                             inputInfoDivisi(x);
                             p = createElemenDivisi_103012430046(x);
                             insertFirstDivisi_103012430046(L,p);
+                            menuAdmin();
+                            return;
                         case 2:
                             inputInfoDivisi(x);
                             p = createElemenDivisi_103012430046(x);
                             insertLastDivisi_103012430046(L,p);
+                            menuAdmin();
+                            return;
                         case 3:
                             inputInfoDivisi(x);
                             p = createElemenDivisi_103012430046(x);
@@ -297,9 +328,15 @@ void menuAdmin(){
                             cin >> nama;
                             prec = searchDivisi_103012400148(L,nama);
                             insertAfterDivisi_103012430046(L,prec,p);
+                            menuAdmin();
+                            return;
                         case 4:
                             menuAdmin();
-                        default: cout << "Pilihan salah!";
+                            return;
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuAdmin();
+                            return;
                     }
                 case 2:
                     cout << "============================================" << endl;
@@ -317,11 +354,15 @@ void menuAdmin(){
                             deleteFirstDivisi_103012400148(L,p);
                             if (p!=nullptr){
                             cout << "Divisi dengan nama Divisi: " << p->info.namaDiv << "Berhasil Dihapus.";
+                            menuAdmin();
+                            return;
                             }
                         case 2:
                             deleteLastDivisi_103012400148(L,p);
                             if (p!=nullptr){
                             cout << "Divisi dengan nama Divisi: " << p->info.namaDiv << "Berhasil Dihapus.";
+                            menuAdmin();
+                            return;
                             }
                         case 3:
                             cout << "Delete Divisi Setelah Divisi dengan nama apa? ";
@@ -330,10 +371,15 @@ void menuAdmin(){
                             deleteAfterDivisi_103012400148(L,prec,p);
                             if (p!=nullptr){
                             cout << "Divisi dengan nama Divisi: " << p->info.namaDiv << "Berhasil Dihapus.";
+                            menuAdmin();
+                            return;
                             }
                         case 4:
                             menuAdmin();
-                        default: cout << "Pilihan salah!";
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuAdmin();
+                            return;
                     }
                 case 3:
                     cout << "============================================" << endl;
@@ -347,9 +393,15 @@ void menuAdmin(){
                     switch (pilih2) {
                         case 1:
                             printDivisi_103012400148(L);
+                            menuAdmin();
+                            return;
                         case 2:
                             menuAdmin();
-                        default: cout << "Pilihan salah!";
+                            return;
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuAdmin();
+                            return;
                     }
                 case 4:
                     cout << "============================================" << endl;
@@ -383,13 +435,23 @@ void menuAdmin(){
                             } else {
                                 cout << "Divisi tidak ditemukan!" << endl;
                             }
+                            menuAdmin();
+                            return;
                         case 2:
                             menuAdmin();
-                        default: cout << "Pilihan salah!";
+                            return;
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuAdmin();
+                            return;
                     }
                 case 5:
                     menuAdmin();
-                default: cout << "Pilihan salah!";
+                    return;
+                default:
+                    cout << "Pilihan salah!" << endl;
+                    menuAdmin();
+                    return;
             }
         case 2:
             cout << "============================================" << endl;
@@ -423,6 +485,8 @@ void menuAdmin(){
                             inputInfoPegawai(y);
                             q = createElemenPegawai_103012400148(y);
                             insertFirstPegawai_103012400148(p,q);
+                            menuAdmin();
+                            return;
                         case 2:
                             cout << "Nama Divisi yang ingin ditambahkan Pegawai: ";
                             cin >> nama;
@@ -430,6 +494,8 @@ void menuAdmin(){
                             inputInfoPegawai(y);
                             q = createElemenPegawai_103012400148(y);
                             insertLastPegawai_103012400148(p,q);
+                            menuAdmin();
+                            return;
                         case 3:
                             cout << "Nama Divisi yang ingin ditambahkan Pegawai: ";
                             cin >> nama;
@@ -440,9 +506,15 @@ void menuAdmin(){
                             cin >> nama;
                             precp = searchPegawai_103012430046(p,nama);
                             insertAfterPegawai_103012400148(p,precp,q);
+                            menuAdmin();
+                            return;
                         case 4:
                             menuAdmin();
-                        default: cout << "Pilihan salah!";
+                            return;
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuAdmin();
+                            return;
                     }
                 case 2:
                     cout << "============================================" << endl;
@@ -464,6 +536,8 @@ void menuAdmin(){
                             if (q!=nullptr){
                                 cout << "Pegawai dengan nama: " << q->info.nama << "Berhasil Dihapus.";
                             }
+                            menuAdmin();
+                            return;
                         case 2:
                             cout << "Nama Divisi yang ingin Pegawainya dihapus: ";
                             cin >> nama;
@@ -472,6 +546,8 @@ void menuAdmin(){
                             if (q!=nullptr){
                                 cout << "Pegawai dengan nama: " << q->info.nama << "Berhasil Dihapus.";
                             }
+                            menuAdmin();
+                            return;
                         case 3:
                             cout << "Nama Divisi yang ingin Pegawainya dihapus: ";
                             cin >> nama;
@@ -483,9 +559,15 @@ void menuAdmin(){
                             if (q!=nullptr){
                                 cout << "Pegawai dengan nama: " << q->info.nama << "Berhasil Dihapus.";
                             }
+                            menuAdmin();
+                            return;
                         case 4:
                             menuAdmin();
-                        default: cout << "Pilihan salah!";
+                            return;
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuAdmin();
+                            return;
                     }
                 case 3:
                     cout << "============================================" << endl;
@@ -502,9 +584,15 @@ void menuAdmin(){
                             cin >> nama;
                             p = searchDivisi_103012400148(L,nama);
                             printPegawai_103012430046(p);
+                            menuAdmin();
+                            return;
                         case 2:
                             menuAdmin();
-                        default: cout << "Pilihan salah!";
+                            return;
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuAdmin();
+                            return;
                     }
                 case 4:
                     cout << "============================================" << endl;
@@ -541,16 +629,31 @@ void menuAdmin(){
                             } else {
                                 cout << "Pegawai tidak ditemukan!" << endl;
                             }
+                            menuAdmin();
+                            return;
                         case 2:
                             menuAdmin();
-                        default: cout << "Pilihan salah!";
+                            return;
+                        default:
+                            cout << "Pilihan salah!" << endl;
+                            menuAdmin();
+                            return;
                     }
                 case 5:
                     menuAdmin();
-                default: cout << "Pilihan salah!";
+                    return;
+                default:
+                    cout << "Pilihan salah!" << endl;
+                    menuAdmin();
+                            return;
             }
-        case 3: mainmenu();
-        default: cout << "Pilihan salah!";
+        case 3:
+            mainmenu();
+            return;
+        default:
+            cout << "Pilihan salah!" << endl;
+            menuAdmin();
+            return;
     }
 }
 

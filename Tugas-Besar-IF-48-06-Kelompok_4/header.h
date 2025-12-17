@@ -103,7 +103,7 @@ void mainmenu();
 // Main menu user
 void menuUser(listDivisi &L);
 // Main menu admin
-void menuAdmin();
+void menuAdmin(listDivisi &L);
 // Prosedur Tambahan
 void dummy(listDivisi &L);
 void inputInfoDivisi(Divisi &x);

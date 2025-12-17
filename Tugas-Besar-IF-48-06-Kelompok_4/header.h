@@ -101,7 +101,7 @@ void hapusPegawaiByStatusDivisi_103012400148(listDivisi &L);
 // Main menu admin
 void mainmenu();
 // Main menu user
-void menuUser();
+void menuUser(listDivisi &L);
 // Main menu admin
 void menuAdmin();
 // Prosedur Tambahan

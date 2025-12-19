@@ -99,7 +99,7 @@ void hapusPegawaiByStatusDivisi_103012400148(listDivisi &L);
 
 
 // Main menu admin
-void mainmenu();
+void mainmenu(listDivisi &L);
 // Main menu user
 void menuUser(listDivisi &L);
 // Main menu admin

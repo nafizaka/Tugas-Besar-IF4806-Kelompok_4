@@ -4,16 +4,20 @@
 using namespace std;
 
 adrPegawai createElemenPegawai_103012400148(Pegawai x){
-    adrPegawai p;
-    p = new elemenPegawai;
+    adrPegawai p = new elemenPegawai;
+
     p->info.nama = x.nama;
     p->info.id = x.id;
     p->info.jabatan = x.jabatan;
+    p->info.umur = x.umur;
+    p->info.LamaBekerja = x.LamaBekerja;
     p->info.gaji = x.gaji;
     p->info.status = x.status;
+
     p->next = nullptr;
     return p;
 }
+
 bool isEmptyPegawai_103012400148(adrDivisi p){
     if (p==nullptr){
         return true;
@@ -84,7 +88,7 @@ void printAllPegawai_103012400148(listDivisi L){
                 cout << "ID     : " << q->info.id << endl;
                 cout << "Jabatan: " << q->info.jabatan << endl;
                 cout << "Umur   : " << q->info.umur << endl;
-                cout << "Lama Bekerja: " << q->info.LamaBekerja << endl;
+                cout << "Lama Bekerja: " << q->info.LamaBekerja << " Tahun" << endl;
                 cout << "Gaji   : " << q->info.gaji << endl;
                 cout << "Status : "
                      << (q->info.status ? "Aktif" : "Tidak Aktif") << endl;

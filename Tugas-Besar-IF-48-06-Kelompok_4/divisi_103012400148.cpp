@@ -48,10 +48,13 @@ void deleteAfterDivisi_103012400148(listDivisi &L, adrDivisi prec, adrDivisi &p)
 }
 adrDivisi searchDivisi_103012400148(listDivisi L, string nama){
     adrDivisi q = L.first;
-    while (q != nullptr && q->info.namaDiv != nama){
+    while (q != nullptr){
+        if (q->info.namaDiv == nama){
+            return q;
+        }
         q = q->next;
     }
-    return q;
+    return nullptr;
 }
 void printDivisi_103012400148(listDivisi L) {
     if (L.first == nullptr) {
@@ -63,7 +66,13 @@ void printDivisi_103012400148(listDivisi L) {
             cout << "Nama Divisi  : " << p->info.namaDiv << endl;
             cout << "ID Divisi    : " << p->info.ID_Div << endl;
             cout << "Kepala Divisi: " << p->info.kepalaDiv << endl;
-            cout << "Jumlah Pegawai: " << p->info.jumPegawai << endl;
+            int hitung = 0;
+            adrPegawai q = p->firstPegawai;
+            while(q != nullptr){
+                hitung++;
+                q = q->next;
+            }
+            cout << "Jumlah Pegawai: " << hitung << endl;
             cout << "Status Divisi : ";
             if (p->info.statusDiv) {
                 cout<<"Aktif";
@@ -82,11 +91,8 @@ void lihatDivisiTerbanyak_103012400148(listDivisi L) {
         cout << "Data divisi kosong!" << endl;
         return;
     }
-
     adrDivisi p = L.first;
     int maxPegawai = -1;
-
-    // 🔹 Cari jumlah maksimum
     while (p != nullptr) {
         int count = 0;
         adrPegawai q = p->firstPegawai;
@@ -94,24 +100,19 @@ void lihatDivisiTerbanyak_103012400148(listDivisi L) {
             count++;
             q = q->next;
         }
-
         if (count > maxPegawai) {
             maxPegawai = count;
         }
         p = p->next;
     }
-
     if (maxPegawai <= 0) {
         cout << "Belum ada pegawai di semua divisi." << endl;
         return;
     }
-
-    // 🔹 Tampilkan divisi dengan jumlah maksimum
     cout << "==================================" << endl;
     cout << "Divisi Dengan Karyawan Terbanyak" << endl;
     cout << "Jumlah Maksimum : " << maxPegawai << endl;
     cout << "==================================" << endl;
-
     p = L.first;
     while (p != nullptr) {
         int count = 0;

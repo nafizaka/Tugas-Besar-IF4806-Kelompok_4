@@ -3,10 +3,9 @@
 
 using namespace std;
 
-int main()
-{
+int main(){
     listDivisi L;
-    createListDivisi_103012430046(L);
-    mainmenu();
+    dummy(L);
+    mainmenu(L);
     return 0;
 }

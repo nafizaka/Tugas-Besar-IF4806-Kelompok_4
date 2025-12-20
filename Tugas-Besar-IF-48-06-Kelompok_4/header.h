@@ -52,6 +52,9 @@ void deleteLastDivisi_103012400148(listDivisi &L, adrDivisi &p);
 void deleteAfterDivisi_103012400148(listDivisi &L, adrDivisi Prec, adrDivisi &p);
 adrDivisi searchDivisi_103012400148(listDivisi L, string nama);
 void printDivisi_103012400148(listDivisi L);
+
+void editNamaStatusDivisi_103012430046(listDivisi &L);
+
 //Fitur Pegawai
 adrPegawai createElemenPegawai_103012400148(Pegawai x);
 bool isEmptyPegawai_103012400148(adrDivisi p);
@@ -87,13 +90,13 @@ void lihatTotalPegawaiAktifNonaktif_103012400148(listDivisi L);
 // lihat jumlah seluruh pegawai
 void lihatTotalSeluruhPegawai_103012400148(listDivisi L);
 // mengubah nama atau status pegawai
-void editNamaStatusPegawai_103012400148(listDivisi &L);
+void editNamaStatusPegawai_103012430046(listDivisi &L);
 // menghapus pegawai berdasarkan id & divisi
-void hapusPegawaiByID_103012400148(listDivisi &L);
+void hapusPegawaiByID_103012430046(listDivisi &L);
 // menambah pegawai baru
-void tambahPegawai_103012400148(listDivisi &L);
+void tambahPegawai_103012430046(listDivisi &L);
 // menghapus berdasarkan status
-void hapusPegawaiByStatusDivisi_103012400148(listDivisi &L);
+void hapusPegawaiByStatusDivisi_103012430046(listDivisi &L);
 
 
 

@@ -63,3 +63,32 @@ void insertAfterDivisi_103012430046(listDivisi &L, adrDivisi prec, adrDivisi p){
         prec->next = p;
     }
 }
+
+void editNamaStatusDivisi_103012430046(listDivisi &L) {
+    string namaDiv, idCari, namaBaru;
+    int statusBaru;
+    adrDivisi p;
+
+    cout << "Masukkan Nama Divisi : ";
+    cin >> namaDiv;
+    p = searchDivisi_103012400148(L, namaDiv);
+    if (p == nullptr) {
+        cout << "Divisi tidak ditemukan!" << endl;
+    } else {
+        cout << "Nama Lama   : " << p->info.namaDiv << endl;
+        cout << "Status Lama : ";
+        if (p->info.statusDiv){
+            cout << "Aktif" << endl;
+        } else {
+            cout << "Tidak Aktif" << endl;
+        }
+        cout << "Masukkan Nama Baru : ";
+    cin >> namaBaru;
+    p->info.namaDiv = namaBaru;
+    cout << "Masukkan Status Baru (1 = Aktif, 0 = Tidak Aktif) : ";
+    cin >> statusBaru;
+    p->info.statusDiv = (statusBaru == 1);
+    cout << "Data Divisi berhasil diperbarui." << endl;
+    }
+}
+

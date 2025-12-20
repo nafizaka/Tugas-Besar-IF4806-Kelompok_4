@@ -85,3 +85,129 @@ void printPegawai_103012430046(adrDivisi p){
         cout << endl;
     }
 }
+
+void hapusPegawaiByID_103012430046(listDivisi &L) {
+    string namaDiv, idCari;
+
+    cout << "Masukkan Nama Divisi : ";
+    cin >> namaDiv;
+    adrDivisi p = searchDivisi_103012400148(L, namaDiv);
+    if (p == nullptr) {
+        cout << "Divisi tidak ditemukan!" << endl;
+        return;
+    }
+    if (p->firstPegawai == nullptr) {
+        cout << "Tidak ada pegawai di divisi ini." << endl;
+        return;
+    }
+    cout << "Masukkan ID Karyawan yang akan dihapus : ";
+    cin >> idCari;
+    adrPegawai q = searchPegawai_103012430046(p, idCari);
+    if (q == nullptr) {
+        cout << "Karyawan tidak ditemukan!" << endl;
+        return;
+    }
+    if (q == p->firstPegawai) {
+        deleteFirstPegawai_103012430046(p, q);
+    }
+    else {
+        adrPegawai prec = p->firstPegawai;
+        while (prec->next != q) {
+            prec = prec->next;
+        }
+        deleteAfterPegawai_103012430046(p, prec, q);
+    }
+    cout << "Karyawan dengan ID " << idCari << " berhasil dihapus." << endl;
+}
+void hapusPegawaiByStatusDivisi_103012430046(listDivisi &L) {
+    string namaDiv;
+    int statusPilihan;
+    bool adaHapus = false;
+    cout << "Masukkan Nama Divisi : ";
+    cin >> namaDiv;
+    adrDivisi p = searchDivisi_103012400148(L, namaDiv);
+    if (p == nullptr) {
+        cout << "Divisi tidak ditemukan!" << endl;
+        return;
+    }
+    if (p->firstPegawai == nullptr) {
+        cout << "Tidak ada pegawai di divisi ini." << endl;
+        return;
+    }
+    cout << "Hapus Pegawai Berdasarkan Status" << endl;
+    cout << "1. Aktif" << endl;
+    cout << "0. Tidak Aktif" << endl;
+    cout << "Pilih Status yang akan dihapus : ";
+    cin >> statusPilihan;
+    bool statusTarget;
+    if (statusPilihan == 1) {
+        statusTarget = true;
+    } else {
+        statusTarget = false;
+    }
+    adrPegawai curr = p->firstPegawai;
+    adrPegawai prev = nullptr;
+    while (curr != nullptr) {
+        if (curr->info.status == statusTarget) {
+            adaHapus = true;
+            adrPegawai hapus = curr;
+            if (curr == p->firstPegawai) {
+                deleteFirstPegawai_103012430046(p, hapus);
+                curr = p->firstPegawai;
+            }
+            else {
+                curr = curr->next;
+                deleteAfterPegawai_103012430046(p, prev, hapus);
+            }
+        } else {
+            prev = curr;
+            curr = curr->next;
+        }
+    }
+    if (adaHapus == true) {
+        cout << "Semua pegawai dengan status ";
+        if (statusTarget == true) {
+            cout << "AKTIF";
+        } else {
+            cout << "TIDAK AKTIF";
+        }
+        cout << " pada divisi " << namaDiv
+             << " berhasil dihapus." << endl;
+    } else {
+        cout << "Tidak ada pegawai dengan status tersebut." << endl;
+    }
+}
+void tambahPegawai_103012430046(listDivisi &L) {
+    string namaDiv;
+    Pegawai x;
+    adrPegawai q;
+    cout << "Masukkan Nama Divisi : ";
+    cin >> namaDiv;
+    adrDivisi p = searchDivisi_103012400148(L, namaDiv);
+    if (p == nullptr) {
+        cout << "Divisi tidak ditemukan!" << endl;
+        return;
+    }
+    cout << "=== Input Data Pegawai Baru ===" << endl;
+    cout << "Nama        : ";
+    cin >> x.nama;
+    cout << "ID          : ";
+    cin >> x.id;
+    cout << "Jabatan     : ";
+    cin >> x.jabatan;
+    cout << "Umur        : ";
+    cin >> x.umur;
+    cout << "Gaji        : ";
+    cin >> x.gaji;
+    cout << "Status (1 = Aktif, 0 = Tidak Aktif) : ";
+    cin >> x.status;
+    x.LamaBekerja = 0;
+    q = createElemenPegawai_103012400148(x);
+    if (p->firstPegawai == nullptr) {
+        insertFirstPegawai_103012400148(p, q);
+    } else {
+        insertLastPegawai_103012400148(p, q);
+    }
+    cout << "Pegawai baru berhasil ditambahkan ke divisi "
+         << namaDiv << "." << endl;
+}

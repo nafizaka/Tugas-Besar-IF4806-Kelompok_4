@@ -86,7 +86,6 @@ void lihatDivisiTerbanyak_103012400148(listDivisi L) {
     adrDivisi p = L.first;
     int maxPegawai = -1;
 
-    // 🔹 Cari jumlah maksimum
     while (p != nullptr) {
         int count = 0;
         adrPegawai q = p->firstPegawai;
@@ -106,7 +105,7 @@ void lihatDivisiTerbanyak_103012400148(listDivisi L) {
         return;
     }
 
-    // 🔹 Tampilkan divisi dengan jumlah maksimum
+
     cout << "==================================" << endl;
     cout << "Divisi Dengan Karyawan Terbanyak" << endl;
     cout << "Jumlah Maksimum : " << maxPegawai << endl;

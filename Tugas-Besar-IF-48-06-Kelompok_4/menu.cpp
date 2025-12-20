@@ -274,17 +274,20 @@ void menuUser(listDivisi &L) {
             switch (pilih){
                 case 1:
                     system("cls");
-                    editNamaStatusPegawai_103012430046(L);
+                    printAllPegawai_103012400148(L);
+                    editNamaStatusPegawai_103012400148(L);
                     menuUser(L);
                     break;
                 case 2:
                     system("cls");
-                    hapusPegawaiByID_103012430046(L);
+                    printAllPegawai_103012400148(L);
+                    hapusPegawaiByID_103012400148(L);
                     menuUser(L);
                     break;
                 case 3:
                     system("cls");
-                    hapusPegawaiByStatusDivisi_103012430046(L);
+                    printDivisi_103012400148(L);
+                    hapusPegawaiByStatusDivisi_103012400148(L);
                     menuUser(L);
                     break;
                 case 4:
@@ -798,7 +801,7 @@ void menuAdmin(listDivisi &L){
                     cout << "============================================" << endl;
                     cout << "                MENU PEGAWAI                " << endl;
                     cout << "============================================" << endl;
-                    cout << "1. Edit STatus Pegawai" << endl;
+                    cout << "1. Edit Status Pegawai" << endl;
                     cout << "2. Kembali ke menu Pegawai" << endl;
                     cout << "--------------------------------------------" << endl;
                     cout << " Masukkan pilihan Anda : ";
@@ -940,31 +943,31 @@ void dummy(listDivisi &L){
 
 
     adrPegawai q;
-    Pegawai p1 = {"Ali","P01","Programmer",25,3,7000000,true};
+    Pegawai p1 = {"Akbar","P01","IT Staff",25,3,7000000,true};
     q = createElemenPegawai_103012400148(p1);
     insertLastPegawai_103012400148(pIT, q);
     pIT->info.jumPegawai++;
-    Pegawai p2 = {"Dina","P02","QA",24,2,6500000,true};
+    Pegawai p2 = {"Satria","P02","IT Staff",24,2,6500000,true};
     q = createElemenPegawai_103012400148(p2);
     insertLastPegawai_103012400148(pIT, q);
     pIT->info.jumPegawai++;
-    Pegawai p3 = {"Rudi","P03","SysAdmin",30,5,8000000,true};
+    Pegawai p3 = {"Jonathan","P03","IT Support",30,5,8000000,true};
     q = createElemenPegawai_103012400148(p3);
     insertLastPegawai_103012400148(pIT, q);
     pIT->info.jumPegawai++;
-    Pegawai p4 = {"Sinta","P04","HR Staff",26,2,6000000,true};
+    Pegawai p4 = {"Raihan","P04","HR Staff",26,2,6000000,true};
     q = createElemenPegawai_103012400148(p4);
     insertLastPegawai_103012400148(pHR, q);
     pHR->info.jumPegawai++;
-    Pegawai p5 = {"Bayu","P05","Recruiter",28,4,6200000,true};
+    Pegawai p5 = {"Fathir","P05","HR Staff",28,4,6200000,true};
     q = createElemenPegawai_103012400148(p5);
     insertLastPegawai_103012400148(pHR, q);
     pHR->info.jumPegawai++;
-    Pegawai p6 = {"Tono","P06","Accountant",32,6,7500000,true};
+    Pegawai p6 = {"Thoriq","P06","Finance Staff",32,6,7500000,true};
     q = createElemenPegawai_103012400148(p6);
     insertLastPegawai_103012400148(pFIN, q);
     pFIN->info.jumPegawai++;
-    Pegawai p7 = {"Maya","P07","Auditor",29,4,7200000,true};
+    Pegawai p7 = {"Maya","P07","Finance Staff",29,4,7200000,true};
     q = createElemenPegawai_103012400148(p7);
     insertLastPegawai_103012400148(pFIN, q);
     pFIN->info.jumPegawai++;
@@ -972,12 +975,52 @@ void dummy(listDivisi &L){
     q = createElemenPegawai_103012400148(p8);
     insertLastPegawai_103012400148(pFIN, q);
     pFIN->info.jumPegawai++;
-    Pegawai p9 = {"Nina","P09","SEO Specialist",26,2,6500000,true};
+    Pegawai p9 = {"Nina","P09","Marketing Staff",26,2,6500000,true};
     q = createElemenPegawai_103012400148(p9);
     insertLastPegawai_103012400148(pMKT, q);
     pMKT->info.jumPegawai++;
-    Pegawai p10 = {"Riko","P10","Content Creator",24,1,6000000,true};
+    Pegawai p10 = {"Riko","P10","Marketing Staff",24,1,6000000,true};
     q = createElemenPegawai_103012400148(p10);
+    insertLastPegawai_103012400148(pMKT, q);
+    pMKT->info.jumPegawai++;
+    Pegawai p11 = {"Agus","P11","IT Manager",55,25,12000000,false};
+    q = createElemenPegawai_103012400148(p11);
+    insertLastPegawai_103012400148(pIT, q);
+    pIT->info.jumPegawai++;
+    Pegawai p12 = {"Wawan","P12","IT Staff",50,22,9000000,false};
+    q = createElemenPegawai_103012400148(p12);
+    insertLastPegawai_103012400148(pIT, q);
+    pIT->info.jumPegawai++;
+    Pegawai p13 = {"Julian","P13","HR Manager",54,24,11000000,false};
+    q = createElemenPegawai_103012400148(p13);
+    insertLastPegawai_103012400148(pHR, q);
+    pHR->info.jumPegawai++;
+    Pegawai p14 = {"Amad","P14","HR Staff",49,20,8500000,false};
+    q = createElemenPegawai_103012400148(p14);
+    insertLastPegawai_103012400148(pHR, q);
+    pHR->info.jumPegawai++;
+    Pegawai p15 = {"Dedi","P15","Admin HR",52,23,8000000,false};
+    q = createElemenPegawai_103012400148(p15);
+    insertLastPegawai_103012400148(pHR, q);
+    pHR->info.jumPegawai++;
+    Pegawai p16 = {"Mulyadi","P16","Finance Manager",56,28,13000000,false};
+    q = createElemenPegawai_103012400148(p16);
+    insertLastPegawai_103012400148(pFIN, q);
+    pFIN->info.jumPegawai++;
+    Pegawai p17 = {"Steve","P17","Finance Staff",53,25,9500000,false};
+    q = createElemenPegawai_103012400148(p17);
+    insertLastPegawai_103012400148(pFIN, q);
+    pFIN->info.jumPegawai++;
+    Pegawai p18 = {"Nafiz","P18","Accounting Staff",51,22,9000000,false};
+    q = createElemenPegawai_103012400148(p18);
+    insertLastPegawai_103012400148(pFIN, q);
+    pFIN->info.jumPegawai++;
+    Pegawai p19 = {"Budi","P19","Marketing Manager",55,26,11500000,false};
+    q = createElemenPegawai_103012400148(p19);
+    insertLastPegawai_103012400148(pMKT, q);
+    pMKT->info.jumPegawai++;
+    Pegawai p20 = {"Bambang","P20","Marketing Staff",50,21,8800000,false};
+    q = createElemenPegawai_103012400148(p20);
     insertLastPegawai_103012400148(pMKT, q);
     pMKT->info.jumPegawai++;
 }

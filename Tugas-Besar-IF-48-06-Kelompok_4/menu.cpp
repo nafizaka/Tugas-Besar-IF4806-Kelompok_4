@@ -275,19 +275,19 @@ void menuUser(listDivisi &L) {
                 case 1:
                     system("cls");
                     printAllPegawai_103012400148(L);
-                    editNamaStatusPegawai_103012400148(L);
+                    editNamaStatusPegawai_103012430046(L);
                     menuUser(L);
                     break;
                 case 2:
                     system("cls");
                     printAllPegawai_103012400148(L);
-                    hapusPegawaiByID_103012400148(L);
+                    hapusPegawaiByID_103012430046(L);
                     menuUser(L);
                     break;
                 case 3:
                     system("cls");
                     printDivisi_103012400148(L);
-                    hapusPegawaiByStatusDivisi_103012400148(L);
+                    hapusPegawaiByStatusDivisi_103012430046(L);
                     menuUser(L);
                     break;
                 case 4:

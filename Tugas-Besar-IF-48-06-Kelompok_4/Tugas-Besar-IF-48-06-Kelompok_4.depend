@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1765917399 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012400148.cpp
+1766195541 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012400148.cpp
 	<iostream>
 	"header.h"
 
@@ -8,23 +8,23 @@
 
 1764789535 c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi.h
 
-1765883986 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012430046.cpp
+1766199614 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012430046.cpp
 	<iostream>
 	"header.h"
 
-1765919550 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\main.cpp
+1766195541 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\main.cpp
 	<iostream>
 	"header.h"
 
-1765917399 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\pegawai_103012400148.cpp
+1766196816 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\pegawai_103012400148.cpp
 	<iostream>
 	"header.h"
 
-1765917399 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\pegawai_103012430046.cpp
+1766199673 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\pegawai_103012430046.cpp
 	<iostream>
 	"header.h"
 
-1765993431 c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\header.h
+1766199436 c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\header.h
 
 1766171671 source:d:\telkom university\semester 3\struktur data\tugas-besar-if4806-kelompok_4\tugas-besar-if-48-06-kelompok_4\divisi_103012400148.cpp
 	<iostream>
@@ -48,7 +48,7 @@
 	<iostream>
 	"header.h"
 
-1765993804 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\menu.cpp
+1766199427 source:c:\users\acer\tugas-besar-if-48-06-kelompok_4\tugas-besar-if-48-06-kelompok_4\menu.cpp
 	<iostream>
 	"header.h"
 
